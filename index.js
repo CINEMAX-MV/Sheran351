@@ -8,10 +8,10 @@ __path = process.cwd();
 const PORT = process.env.PORT || 8000;
 
 // 1. පරිශීලකයා Heroku වල ලබාදෙන SESSION_ID එක
-const SESSION_ID = process.env.SESSION_ID || '';
+const SESSION_ID = process.env.SESSION_ID || 'ROCKY-MD@xRJgmZoL#ZiCDMWkLQtO_Y6_uCJOAk91F2x5MASb8qOFlpD4uBVc';
 
 // 2. මෙතන 'YOUR_PREFIX;;' වෙනුවට ඔබට අවශ්‍ය නම දාන්න (උදා: Sheran;;)
-const MY_PREFIX = 'ROCKY-MD'; 
+const MY_PREFIX = 'ROCKY-MD@'; 
 
 async function startBot() {
     // Session String එක creds.json එකක් බවට පත් කිරීමේ කොටස
