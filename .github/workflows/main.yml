@@ -1,0 +1,29 @@
+name: WhatsApp Bot Run
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch: # මැනුවල් ලෙස බොට් එක start කිරීමට
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18.x' # ඔබේ බොට් එකට අවශ්‍ය node version එක
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Start Bot
+        env:
+          # GitHub Secrets වල ඇති variables මෙතැනට සම්බන්ධ වේ
+          SESSION_ID: ${{ secrets.SESSION_ID }}
+          # වෙනත් අවශ්‍ය variables තිබේ නම් මෙහි සඳහන් කරන්න
+        run: npm start
